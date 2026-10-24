@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__WEB_TITLE__</title>
+<style>
+  :root {
+    --bg: #000;
+    --text: #d4d4d4;
+    --dim: #6e6e6e;
+    --line: #1c1c1c;
+    --accent: #d4a35a;
+    --surface: #0c0c0c;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); }
+  body {
+    font: 15px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 72px 16px 96px; }
+  h1 { font-size: 15px; font-weight: 500; letter-spacing: .2em; color: var(--accent); margin: 0 0 8px; }
+  .intro { color: var(--dim); margin: 0 0 32px; }
+  textarea {
+    width: 100%; min-height: 128px; resize: vertical;
+    background: transparent; color: var(--text);
+    border: 1px solid var(--line); border-radius: 6px;
+    font: inherit; padding: 12px 14px; outline: none;
+    transition: border-color .2s;
+  }
+  textarea:focus { border-color: color-mix(in srgb, var(--dim) 45%, var(--line)); }
+  textarea::placeholder { color: #3a3a3a; }
+  button {
+    margin-top: 16px; background: none; border: 0; padding: 0;
+    color: var(--accent); font: inherit; letter-spacing: .08em; cursor: pointer;
+    transition: opacity .2s;
+  }
+  button:hover { opacity: .75; }
+  button:disabled { opacity: .35; cursor: default; }
+  #result { margin-top: 56px; opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; }
+  #result.shown { opacity: 1; transform: none; }
+  .label { color: var(--dim); }
+  .meter { font-size: 20px; color: var(--accent); margin: 0; }
+  .meter-name { color: var(--dim); margin: 2px 0 6px; }
+  .stats { color: var(--dim); }
+  .stats b { color: var(--text); font-weight: 400; }
+  .beyit { margin-top: 48px; }
+  .beyit-label { color: var(--dim); font-size: 13px; letter-spacing: .06em; }
+  .flag { color: var(--accent); margin-left: 12px; }
+  .misra { margin-top: 20px; }
+  .misra-text { color: var(--dim); font-style: italic; }
+  .feet { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 10px 0 8px; font-family: var(--mono); font-size: 14px; }
+  .foot-name { color: var(--dim); font-size: 12px; margin-bottom: 2px; }
+  .units { display: flex; gap: 10px; }
+  .unit { display: flex; flex-direction: column; align-items: flex-start; }
+  .unit .mark { color: var(--dim); }
+  .unit.lic, .unit.lic .mark { color: var(--accent); }
+  .licenses { color: var(--dim); font-size: 13px; }
+  .licenses span { margin-right: 18px; white-space: nowrap; }
+  .licenses em { color: var(--accent); font-style: normal; }
+  .nofit { color: var(--accent); font-size: 13px; }
+  .alts { margin-top: 48px; color: var(--dim); }
+  .alts div { display: flex; gap: 24px; }
+  .alts .feet-label { color: var(--text); }
+  .error { color: var(--accent); margin-top: 32px; }
+  [data-tip] { cursor: help; }
+  [data-tip-press] { -webkit-touch-callout: none; }
+  [data-tip]:focus { outline: none; }
+  [data-tip]:focus-visible { outline: 1px solid var(--dim); outline-offset: 2px; border-radius: 2px; }
+  .tip {
+    position: fixed; left: 0; top: 0; z-index: 10;
+    max-width: min(320px, calc(100vw - 32px)); padding: 10px 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+    color: var(--text); font-size: 12.5px; line-height: 1.55;
+    pointer-events: none; visibility: hidden; opacity: 0; transform: translateY(4px);
+    transition: opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
+  }
+  .tip.open { visibility: visible; opacity: 1; transform: none; transition: opacity .15s ease, transform .15s ease, visibility 0s; }
+  .tip-name { color: var(--accent); }
+  .tip-item + .tip-item { margin-top: 8px; }
+  .repair { float: right; margin-top: 16px; display: inline-flex; align-items: center; gap: 10px; color: var(--dim); font-size: 13px; cursor: pointer; user-select: none; }
+  .repair input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+  .switch { position: relative; width: 26px; height: 14px; border: 1px solid var(--line); border-radius: 7px; transition: border-color .2s ease; }
+  .switch::after {
+    content: ""; position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--dim); transition: transform .2s ease, background-color .2s ease;
+  }
+  .repair input:checked + .switch { border-color: var(--dim); }
+  .repair input:checked + .switch::after { transform: translateX(12px); background: var(--accent); }
+  .repair input:focus-visible + .switch { outline: 1px solid var(--dim); outline-offset: 2px; }
+  .restored { margin-bottom: 40px; }
+  .restored-text { white-space: pre-wrap; }
+  .fix[data-tip] { cursor: pointer; }
+  .fix .changed, .fix.unsure {
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  .fix.unsure { text-decoration-style: dotted; }
+  .lang-row { position: relative; height: 0; }
+  .lang { position: absolute; top: 0; right: 0; display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 24px; }
+  .lang button { margin: 0; color: var(--dim); letter-spacing: .06em; transition: color .2s ease, opacity .2s; }
+  .lang button[aria-pressed="true"] { color: var(--text); cursor: default; }
+  .lang button[aria-pressed="true"]:hover { opacity: 1; }
+  .lang-divider { width: 1px; height: 10px; background: var(--dim); opacity: .4; }
+  @media (prefers-reduced-motion: reduce) {
+    .tip, .tip.open { transform: none; }
+    .switch, .switch::after { transition: none; }
+    .lang button { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="lang-row"><div class="lang" role="group" aria-label="__LANG_LABEL__" data-i18n-label="LANG_LABEL"><button type="button" data-lang="tr" data-i18n="LANG_TR">__LANG_TR__</button><span class="lang-divider" aria-hidden="true"></span><button type="button" data-lang="en" data-i18n="LANG_EN">__LANG_EN__</button></div></div>
+  <h1 data-i18n="WEB_HEADING">__WEB_HEADING__</h1>
+  <p class="intro" data-i18n="WEB_INTRO">__WEB_INTRO__</p>
+  <textarea id="text" placeholder="__WEB_PLACEHOLDER__" data-i18n-placeholder="WEB_PLACEHOLDER" spellcheck="false"></textarea>
+  <button id="go" data-i18n="WEB_BUTTON">__WEB_BUTTON__</button>
+  <label class="repair"><input type="checkbox" id="repair" role="switch"><span class="switch" aria-hidden="true"></span><span data-i18n="WEB_REPAIR">__WEB_REPAIR__</span></label>
+  <section id="result"></section>
+</main>
+<div id="tip" class="tip" role="tooltip"></div>
+<script id="strings" type="application/json">__STRINGS__</script>
+<script>
+  const STRINGS = JSON.parse(document.getElementById("strings").textContent);
+  let lang = storedLanguage();
+  const t = key => STRINGS[lang][key];
+  const local = item => (item.i18n ? item.i18n[lang] : item);
+
+  function storedLanguage() {
+    try {
+      const saved = localStorage.getItem("aruz.lang");
+      if (saved in STRINGS) return saved;
+    } catch {}
+    const browser = (navigator.language || "").slice(0, 2).toLowerCase();
+    return browser in STRINGS ? browser : "tr";
+  }
+
+  function storeLanguage(code) {
+    try {
+      localStorage.setItem("aruz.lang", code);
+    } catch {}
+  }
+
+  function num(value, digits) {
+    const text = digits === undefined ? String(value) : value.toFixed(digits);
+    return text.replace(".", t("DECIMAL"));
+  }
+
+  const input = document.getElementById("text");
+  const button = document.getElementById("go");
+  const result = document.getElementById("result");
+  const repairToggle = document.getElementById("repair");
+  const repairLabel = document.querySelector(".repair");
+  const languageButtons = [...document.querySelectorAll(".lang button")];
+  const fixes = new WeakMap();
+  let current = null;
+  let lastReport = null;
+  let failed = false;
+
+  function el(tag, cls, text) {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function storedRepair() {
+    try {
+      return localStorage.getItem("aruz.repair") !== "0";
+    } catch {
+      return true;
+    }
+  }
+
+  function storeRepair(on) {
+    try {
+      localStorage.setItem("aruz.repair", on ? "1" : "0");
+    } catch {}
+  }
+
+  repairToggle.checked = storedRepair();
+
+  const tip = document.getElementById("tip");
+  const tips = new WeakMap();
+  let tipTarget = null;
+  let showTimer = 0;
+  let hideTimer = 0;
+  let pointerKind = "mouse";
+  let keyboard = false;
+  let pressTimer = 0;
+  let pressed = false;
+
+  function setTip(node, items) {
+    tips.set(node, items);
+    node.dataset.tip = "";
+    node.tabIndex = 0;
+  }
+
+  function setPressTip(node, items) {
+    tips.set(node, items);
+    node.dataset.tipPress = "";
+  }
+
+  function pressTips() {
+    setPressTip(button, [{ name: t("WEB_BUTTON"), text: t("SCAN_TIP") }]);
+    setPressTip(repairLabel, [{ name: t("WEB_REPAIR"), text: t("REPAIR_TIP") }]);
+  }
+
+  function tipTargetOf(node) {
+    const target = node instanceof Element ? node.closest("[data-tip], [data-tip-press]") : null;
+    return target && tips.has(target) ? target : null;
+  }
+
+  function pressTarget(node) {
+    return node !== null && node.hasAttribute("data-tip-press");
+  }
+
+  function placeTip(target) {
+    tip.style.left = "0px";
+    tip.style.top = "0px";
+    const box = target.getBoundingClientRect();
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
+    const gap = 8;
+    let top = box.top - tip.offsetHeight - gap;
+    if (top < gap) top = box.bottom + gap;
+    if (top + tip.offsetHeight > height - gap) top = Math.max(gap, height - tip.offsetHeight - gap);
+    const left = Math.max(gap, Math.min(box.left + box.width / 2 - tip.offsetWidth / 2, width - tip.offsetWidth - gap));
+    tip.style.left = left + "px";
+    tip.style.top = top + "px";
+  }
+
+  function showTip(target) {
+    clearTimeout(showTimer);
+    clearTimeout(hideTimer);
+    if (tipTarget && tipTarget !== target) tipTarget.removeAttribute("aria-describedby");
+    tipTarget = target;
+    tip.replaceChildren(...tips.get(target).map(item => {
+      const block = el("div", "tip-item");
+      block.append(el("div", "tip-name", item.name), el("div", "", item.text));
+      return block;
+    }));
+    placeTip(target);
+    target.setAttribute("aria-describedby", "tip");
+    tip.classList.add("open");
+  }
+
+  function hideTip() {
+    clearTimeout(showTimer);
+    clearTimeout(hideTimer);
+    if (tipTarget) tipTarget.removeAttribute("aria-describedby");
+    tipTarget = null;
+    tip.classList.remove("open");
+  }
+
+  function scheduleShow(target) {
+    clearTimeout(hideTimer);
+    if (target === tipTarget) return;
+    clearTimeout(showTimer);
+    if (tipTarget) showTip(target);
+    else showTimer = setTimeout(() => showTip(target), 120);
+  }
+
+  function scheduleHide() {
+    clearTimeout(showTimer);
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(hideTip, 60);
+  }
+
+  function misraNode(misra) {
+    const node = el("div", "misra");
+    node.append(el("div", "misra-text", misra.text));
+    if (!misra.fit) {
+      node.append(el("div", "nofit", t("NO_FIT")));
+      return node;
+    }
+    const feet = el("div", "feet");
+    for (const foot of misra.fit.feet) {
+      const column = el("div");
+      column.append(el("div", "foot-name", foot.name));
+      const units = el("div", "units");
+      for (const unit of foot.units) {
+        const cell = el("div", "unit" + (unit.license ? " lic" : ""));
+        const mark = el("span", "mark", unit.mark);
+        setTip(mark, misra.fit.syllables[unit.syllable - 1].reasons.map(local));
+        cell.append(el("span", "", unit.text), mark);
+        units.append(cell);
+      }
+      column.append(units);
+      feet.append(column);
+    }
+    node.append(feet);
+    const licenses = el("div", "licenses");
+    if (!misra.fit.licenses.length) licenses.textContent = t("NO_LICENSE");
+    for (const lic of misra.fit.licenses) {
+      const view = local(lic);
+      const item = el("span", "", view.name + " ");
+      item.append(el("em", "", lic.text), document.createTextNode(" " + t("SYLLABLE").replace("{n}", lic.syllable)));
+      setTip(item, [view.tip]);
+      licenses.append(item);
+    }
+    node.append(licenses);
+    return node;
+  }
+
+  function restoredNode(repair) {
+    const block = el("div", "restored");
+    block.append(el("div", "label", t("REPAIR_LABEL")));
+    const body = el("div", "restored-text");
+    const byIndex = new Map(repair.words.map(word => [word.index, word]));
+    for (const segment of repair.segments) {
+      const word = byIndex.get(segment.word);
+      if (!word) {
+        body.append(segment.text);
+        continue;
+      }
+      const node = el("span", "fix" + (word.uncertain ? " unsure" : ""));
+      const marks = new Set(word.changed);
+      [...word.restored].forEach((ch, i) => node.append(marks.has(i) ? el("span", "changed", ch) : ch));
+      node.dataset.word = word.index;
+      node.setAttribute("role", "button");
+      setTip(node, local(word).tips);
+      fixes.set(node, word);
+      body.append(node);
+    }
+    block.append(body);
+    return block;
+  }
+
+  function render(report) {
+    result.replaceChildren();
+    if (report.repair && report.repair.words.length) result.append(restoredNode(report.repair));
+    const notes = report.tips[lang];
+    result.append(el("div", "label", t("METER")));
+    const feetLabel = el("span", "", report.meter.feet);
+    setTip(feetLabel, [notes.meter]);
+    const meter = el("p", "meter");
+    meter.append(feetLabel);
+    result.append(meter);
+    result.append(el("div", "meter-name", report.meter.name));
+    const stats = el("div", "stats");
+    const confidence = el("b", "", t("PERCENT").replace("{value}", num(report.confidence * 100, 1)));
+    const penalty = el("b", "", num(report.meter.penalty));
+    setTip(confidence, [notes.confidence]);
+    setTip(penalty, [notes.penalty]);
+    stats.append(t("CONFIDENCE") + " ", confidence, "   " + t("PENALTY") + " ", penalty);
+    result.append(stats);
+    const many = report.beyits.length > 1;
+    for (const beyit of report.beyits) {
+      const block = el("div", "beyit");
+      if (many || beyit.flagged) {
+        const label = el("div", "beyit-label", t("BEYIT").replace("{n}", beyit.index));
+        if (beyit.flagged) label.append(el("span", "flag", t("BAD_FIT")));
+        block.append(label);
+      }
+      beyit.misras.forEach(m => block.append(misraNode(m)));
+      result.append(block);
+    }
+    const alts = el("div", "alts");
+    alts.append(el("div", "label", t("ALTERNATIVES")));
+    report.alternatives.forEach((alt, i) => {
+      const row = el("div");
+      const name = el("span", "feet-label", alt.feet);
+      setTip(name, [notes.alternatives[i]]);
+      row.append(name, el("span", "", t("PENALTY") + " " + num(alt.penalty)));
+      alts.append(row);
+    });
+    result.append(alts);
+  }
+
+  async function request() {
+    const response = await fetch("/api/scan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: current.text, repair: repairToggle.checked, choices: current.choices }),
+    });
+    if (!response.ok) throw new Error(response.status);
+    return response.json();
+  }
+
+  function show(report) {
+    lastReport = report;
+    failed = false;
+    render(report);
+  }
+
+  function showError() {
+    lastReport = null;
+    failed = true;
+    result.replaceChildren(el("div", "error", t("WEB_ERROR")));
+  }
+
+  async function run() {
+    const text = input.value.trim();
+    if (!text) return;
+    hideTip();
+    button.disabled = true;
+    result.classList.remove("shown");
+    current = { text, choices: {} };
+    try {
+      show(await request());
+    } catch {
+      showError();
+    }
+    requestAnimationFrame(() => requestAnimationFrame(() => result.classList.add("shown")));
+    button.disabled = false;
+  }
+
+  async function refresh(focusIndex) {
+    const reopen = tipTarget !== null;
+    const focused = fixes.has(document.activeElement);
+    try {
+      const report = await request();
+      hideTip();
+      show(report);
+    } catch {
+      hideTip();
+      showError();
+      return;
+    }
+    const node = focusIndex === undefined ? null : result.querySelector(`.fix[data-word="${focusIndex}"]`);
+    if (!node) return;
+    if (focused) node.focus({ preventScroll: true });
+    if (reopen) showTip(node);
+  }
+
+  function cycle(word) {
+    if (word.candidates.length < 2) return;
+    current.choices[word.index] = (word.choice + 1) % word.candidates.length;
+    refresh(word.index);
+  }
+
+  button.addEventListener("click", run);
+  input.addEventListener("keydown", e => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) run(); });
+
+  document.addEventListener("pointerdown", e => {
+    pointerKind = e.pointerType;
+    keyboard = false;
+    pressed = false;
+    clearTimeout(pressTimer);
+    const target = tipTargetOf(e.target);
+    if (!target) hideTip();
+    if (pressTarget(target) && e.pointerType !== "mouse") {
+      pressTimer = setTimeout(() => {
+        pressed = true;
+        showTip(target);
+      }, 500);
+    }
+  });
+  document.addEventListener("pointerup", () => clearTimeout(pressTimer));
+  document.addEventListener("pointercancel", () => clearTimeout(pressTimer));
+  document.addEventListener("click", e => {
+    if (!pressed) return;
+    pressed = false;
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+  document.addEventListener("contextmenu", e => {
+    if (pressTarget(tipTargetOf(e.target)) && pointerKind !== "mouse") e.preventDefault();
+  });
+  document.addEventListener("pointerover", e => {
+    const target = tipTargetOf(e.target);
+    if (e.pointerType === "mouse" && target) scheduleShow(target);
+  });
+  document.addEventListener("pointerout", e => {
+    const target = tipTargetOf(e.target);
+    if (e.pointerType === "mouse" && target && !target.contains(e.relatedTarget)) scheduleHide();
+  });
+  document.addEventListener("focusin", e => {
+    const target = tipTargetOf(e.target);
+    if (target && (!pressTarget(target) || keyboard || pointerKind === "mouse")) scheduleShow(target);
+  });
+  document.addEventListener("focusout", e => {
+    if (tipTargetOf(e.target)) scheduleHide();
+  });
+  document.addEventListener("click", e => {
+    const target = tipTargetOf(e.target);
+    if (!target || pressTarget(target)) return;
+    const word = fixes.get(target);
+    if (pointerKind === "mouse") {
+      if (word) cycle(word);
+      return;
+    }
+    if (target !== tipTarget) showTip(target);
+    else if (word) cycle(word);
+    else hideTip();
+  });
+  document.addEventListener("keydown", e => {
+    keyboard = true;
+    if (e.key === "Escape") hideTip();
+    const word = fixes.get(document.activeElement);
+    if (word && (e.key === "Enter" || e.key === " ")) {
+      e.preventDefault();
+      cycle(word);
+    }
+  });
+  repairToggle.addEventListener("change", () => {
+    storeRepair(repairToggle.checked);
+    if (current) {
+      current.choices = {};
+      refresh();
+    }
+  });
+  window.addEventListener("scroll", () => { if (tipTarget) placeTip(tipTarget); }, { passive: true });
+  window.addEventListener("resize", () => { if (tipTarget) placeTip(tipTarget); });
+
+  function applyLanguage(code) {
+    lang = code;
+    document.documentElement.lang = code;
+    document.title = t("WEB_TITLE");
+    document.querySelectorAll("[data-i18n]").forEach(node => { node.textContent = t(node.dataset.i18n); });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(node => { node.placeholder = t(node.dataset.i18nPlaceholder); });
+    document.querySelectorAll("[data-i18n-label]").forEach(node => { node.setAttribute("aria-label", t(node.dataset.i18nLabel)); });
+    languageButtons.forEach(node => node.setAttribute("aria-pressed", String(node.dataset.lang === code)));
+    pressTips();
+    hideTip();
+    if (lastReport) render(lastReport);
+    else if (failed) showError();
+  }
+
+  languageButtons.forEach(node => node.addEventListener("click", () => {
+    if (node.dataset.lang === lang) return;
+    storeLanguage(node.dataset.lang);
+    applyLanguage(node.dataset.lang);
+  }));
+  applyLanguage(lang);
+</script>
+</body>
+</html>

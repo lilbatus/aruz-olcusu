@@ -1,0 +1,444 @@
+[sources]
+cafer = "Ekrem Câfer, Fuzûlî Şiirinin Vezni, çev. Günay Kâzım Çatalkaya, Divan Edebiyatı Araştırmaları Dergisi 9 (2012), 167-194. https://dergipark.org.tr/tr/download/article-file/53698"
+olmasun = "Ali Rıza Özuygun, Lokman Gözcü, Fuzûlî'nin \"Olmasun Yâ Rab\" Redifli Gazelinin Şerhi ve Yapısalcılık Açısından İncelenmesi, Sosyal Bilimler Araştırmaları Dergisi I (2014), 20-35. https://dergipark.org.tr/en/download/article-file/802330"
+tapsurdum = "Hanzade Güzeloğlu, Hayâlî ve Bâkî'de \"Tapşurdum\" Redifli Gazellerin Mukayesesi, Karadeniz 33 (2017), 159-182. https://dergipark.org.tr/tr/download/article-file/283405"
+turkedebiyati = "Aruz Ölçüsü (Aruz Vezni), turkedebiyati.org. https://www.turkedebiyati.org/aruz-vezni-olcusu/"
+olduhep = "Muhammet Raşit Memiş, Gelenek-Yenilik Bağlamında Nedîm'in \"Oldu Hep\" Redifli Gazelinin Şerhi. https://dergipark.org.tr/tr/download/article-file/2151333"
+yazmis = "Akif Yakışır, Nedim'in \"Yazmış\" Redifli Gazelinin Üslûp Açısından İncelenmesi, Kastamonu Sosyal Bilimler Dergisi 1/1 (2025), 165-176. https://dergipark.org.tr/tr/download/article-file/4789905"
+yayla = "Bülent Yayla, Nâbî'nin 30 Gazelinin (1-30) Şerhi, Yüksek Lisans Tezi, Afyon Kocatepe Üniversitesi. https://acikerisim.aku.edu.tr/xmlui/bitstream/handle/11630/4945/10078735.pdf"
+hasretiz = "Ali Rıza Özuygun, Şeyh Gâlib'in \"Hasretiz\" Redifli Gazelinin Şerhi ve Yapısal Açıdan İncelenmesi, Trakya Üniversitesi Sosyal Bilimler Dergisi. https://dergipark.org.tr/en/download/article-file/321335"
+tigi = "Muhammet Emin Altınışık, Tîgî'nin Tahmisi, Erzincan Üniversitesi Sosyal Bilimler Enstitüsü Dergisi ÖS-III (2016), 247-256 (Nef'î'nin nazîresi, Akkuş 1993 neşrinden). https://dergipark.org.tr/tr/download/article-file/261803"
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-salim"
+source = "cafer"
+where = "s. 173"
+lines = ["Perîşân halk-ı âlem âh u efgân etdügümdendür", "Perîşân oldugum halkı perîşân etdügümdendür"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-salim"
+source = "cafer"
+where = "s. 173"
+lines = ["Sabâ lutf etdün ehl-i derde dermândan haber verdün", "Ten-i mecrûha cândan câna cânândan haber verdün"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-salim"
+source = "cafer"
+where = "s. 174"
+lines = ["Müşevveş olmasın şâne üzülse zülfünün târı", "Peşîmân mı olur âzâd eden yüz min giriftârı"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-salim"
+source = "olmasun"
+where = "1. beyit"
+lines = ["Menüm tek hîç kim zâr u perîşân olmasun yâ Rab", "Esîr-i derd-i ışk u dâğ-ı hicrân olmasun yâ Rab"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-salim"
+source = "olmasun"
+where = "2. beyit"
+lines = ["Dem-â-dem cevrlerdür çekdügüm bî-rahm bütlerden", "Bu kâfirler esîri bir müselmân olmasun yâ Rab"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-6-mahzuf"
+source = "cafer"
+where = "s. 174"
+lines = ["Muhît-i ışka gavvâs olalı cân", "Özini eyledi hâk ile yeksân"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-ahreb-mekfuf"
+source = "cafer"
+where = "s. 175"
+lines = ["Cân verme gam-ı ışka ki ışk âfet-i cândur", "Işk âfet-i cân oldugı meşhûr-ı cihândur"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-8-ahreb"
+source = "cafer"
+where = "s. 175"
+lines = ["Ayîne sever cândan ruhsâre-i cânânı", "Bir hâlete etmiş kim ayrılsa çıhar cânı"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hezec-6-ahreb-makbuz"
+source = "cafer"
+where = "s. 175"
+lines = ["Hüsn olmasa ışkı zâhir olmaz", "Işk olmasa hüsni bâhir olmaz"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-8-mahzuf"
+source = "cafer"
+where = "s. 176"
+lines = ["Hayret ey büt sûretün gördükde lâl eyler meni", "Sûret-i hâlum gören sûret hayâl eyler meni"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-8-mahzuf"
+source = "cafer"
+where = "s. 176"
+lines = ["Âşık oldur kim kılur cânın fedâ cânânına", "Meyl-i cânân etmesün her kim ki kıymaz cânına"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-6-mahzuf"
+source = "cafer"
+where = "s. 178"
+lines = ["Âhumun ey meh eşit evsâfını", "Firkatünden tutdı gög etrâfını"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-8-mahbun"
+source = "cafer"
+where = "s. 179"
+lines = ["Gamdan öldüm demedüm hâl-i dil-i zârı sana", "Ey gül-i tâze revâ görmedüm âzârı sana"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-8-mahbun"
+source = "cafer"
+where = "s. 179"
+lines = ["Yine ol mâhı menüm aldı karârum bu gece", "Çıkacakdur felege nâle-i zârum bu gece"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-8-mahbun"
+source = "cafer"
+where = "s. 179"
+lines = ["Penbe-i dâg-ı cünûn içre nihândur bedenüm", "Diri oldukça libâsum budur ölsem kefenüm"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "remel-8-meskul"
+source = "cafer"
+where = "s. 180"
+lines = ["Büt-i nev-resüm namâza şeb ü rûzî râgıb olmış", "Bu ne dîndür Allah Allah büte secde vâcib olmış"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "recez-4-salim"
+source = "cafer"
+where = "s. 181"
+lines = ["Hak mazharıdur her çiçek", "Ger etmese nakkâş şek"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "recez-4-salim"
+source = "cafer"
+where = "s. 181"
+lines = ["Tutmış Haka nerges yüzin", "Açmış hakîkat-bîn gözin"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "mutekarib-8-salim"
+source = "cafer"
+where = "s. 181"
+lines = ["Yine deşt-i ser-sebzidür fasl-ı hurrem", "Cihân bî-tekellüf tekellüfde âlem"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "mutekarib-8-maksur"
+source = "cafer"
+where = "s. 181"
+lines = ["Gazeldür safâ-bahş-ı ehl-i nazar", "Gazeldür gül-i bû-sitân-ı hüner"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "muzari-8-ahreb-mekfuf"
+source = "cafer"
+where = "s. 182"
+lines = ["Sabrum alup felek mana yüz min cefâ verür", "Az olsa her metâ' ana el çoh behâ verür"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "muzari-8-ahreb-mekfuf"
+source = "cafer"
+where = "s. 182"
+lines = ["Bir gün ki dey alâmetin etmişdi âşikâr", "Tutmışdı öz füsürdelige tab'-ı rûzigâr"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "muzari-8-ahreb"
+source = "cafer"
+where = "s. 183"
+lines = ["Zülfi kimi ayagın koymaz öpem nigârum", "Yohdur anun yanında bir gılca i'tibârum"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "muzari-8-ahreb"
+source = "cafer"
+where = "s. 183"
+lines = ["Olsaydı mendeki gam Ferhâd-i mübtelâde", "Bir âh ile vererdi min Bîsütûnı bâde"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "muctess-8-mahbun"
+source = "cafer"
+where = "s. 184"
+lines = ["Hoş ol zamân ki harîm-i visâle mahrem idüm", "Ne mübtelâ-yı belâ ne mukayyed-i gam idüm"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "muctess-8-mahbun"
+source = "cafer"
+where = "s. 184"
+lines = ["Menem ki kâfile-sâlâr-ı kârvân-ı gamem", "Misâfir-i reh-i sahrâ-yı mihnet ü elemem"]
+
+[[beyit]]
+poet = "Fuzûlî"
+meter = "hafif-6-mahbun"
+source = "cafer"
+where = "s. 187"
+lines = ["Men kimem bir fakîr ü bî-ser ü pâ", "Kemterîn bende vü kemîne gedâ"]
+
+[[beyit]]
+poet = "Bâkî"
+meter = "hezec-8-salim"
+source = "tapsurdum"
+where = "Bâkî gazeli, 1. beyit"
+lines = ["Dil-i pür-derd-i mecrûhı der-i cânâne tapşurdum", "Varup dâru'ş-şifâya yine bir dîvâne tapşurdum"]
+
+[[beyit]]
+poet = "Bâkî"
+meter = "hezec-8-salim"
+source = "tapsurdum"
+where = "Bâkî gazeli, 2. beyit"
+lines = ["Ruhı gül-gûnına ol goncanuñ dil murgını virdüm", "Yine bir bülbül-i gûyâ gül-i hândâne tapşurdum"]
+
+[[beyit]]
+poet = "Bâkî"
+meter = "hezec-8-salim"
+source = "tapsurdum"
+where = "Bâkî gazeli, 3. beyit"
+lines = ["Nigeh-bân eyledüm genc-i gama bir heft-ser ejder", "Hayâl-i zülfini çün bu dil-i vîrâne tapşurdum"]
+
+[[beyit]]
+poet = "Bâkî"
+meter = "hezec-8-salim"
+source = "tapsurdum"
+where = "Bâkî gazeli, 4. beyit"
+lines = ["Acûz u pîr-zen dehrüñ çü kasdı cân imiş bildüm", "Erenler himmetinde anı ben merdâne tapşurdum"]
+
+[[beyit]]
+poet = "Bâkî"
+meter = "muzari-8-ahreb-mekfuf"
+source = "turkedebiyati"
+where = "karışık kalıplar"
+lines = ["Gül hasretinle yollara tutsun kulağını", "Nergis gibi kıyâmete dek çeksin intizâr"]
+
+[[beyit]]
+poet = "Nedîm"
+meter = "remel-8-mahzuf"
+source = "olduhep"
+where = "1. beyit"
+lines = ["Aşka düşdüm cân u dil müft-i cüvânân oldu hep", "Sabr u tâkat masraf-ı çâk-ı girîbân oldu hep"]
+
+[[beyit]]
+poet = "Nedîm"
+meter = "remel-8-mahzuf"
+source = "olduhep"
+where = "2. beyit"
+lines = ["Açmış oldum sînesin bir kerre ârâm u sükûn", "Sîneden bilmem ne hâletdir girîzân oldu hep"]
+
+[[beyit]]
+poet = "Nedîm"
+meter = "remel-8-mahzuf"
+source = "olduhep"
+where = "4. beyit"
+lines = ["Olmadı tenhâca bir işret çemende yâr ile", "Üstüme göz dikdi nergisler nigehbân oldu hep"]
+
+[[beyit]]
+poet = "Nedîm"
+meter = "hezec-8-salim"
+source = "yazmis"
+where = "1. beyit"
+lines = ["Yazanlar peykerim destimde bir kâşî sebû yazmış", "Aceb meşrebce tahrîr eylemiş el-hak nikû yazmış"]
+
+[[beyit]]
+poet = "Nedîm"
+meter = "hezec-8-salim"
+source = "yazmis"
+where = "3. beyit"
+lines = ["Cüvânım bir lûgat gördüm lisânü'l-aşk nâmında", "Belin adın murâd âgûşum adın ârzû yazmış"]
+
+[[beyit]]
+poet = "Nedîm"
+meter = "hezec-8-ahreb-mekfuf"
+source = "turkedebiyati"
+where = "örnek takti"
+lines = ["Bu şehr-i Sıtanbul ki bî-misl ü bahâdır", "Bir sengine yek-pâre Acem mülkü fedâdır"]
+
+[[beyit]]
+poet = "Nef'î"
+meter = "remel-8-mahbun"
+source = "tigi"
+where = "s. 249, 1. beyit"
+lines = ["Mâ'ilin cezbe-i dîdâra hem ânı severin", "Bir güzel çihrede ân olsa ben anı severin"]
+
+[[beyit]]
+poet = "Nef'î"
+meter = "remel-8-mahbun"
+source = "tigi"
+where = "s. 249, 2. beyit"
+lines = ["Dilerin hüsni gibi hulkı güzel cânânı", "Mutlakâ böyle olan şûh-ı cihânı severin"]
+
+[[beyit]]
+poet = "Nef'î"
+meter = "remel-8-mahbun"
+source = "tigi"
+where = "s. 249, 4. beyit"
+lines = ["Sevmezin sevmezin ammâ sevicek mahbûbı", "Nerede var ise bir âfet-i cânı severin"]
+
+[[beyit]]
+poet = "Nef'î"
+meter = "remel-8-mahbun"
+source = "tigi"
+where = "s. 249, 7. beyit"
+lines = ["Çare yok bir güzeli sevmemege ey Nef'î", "Sana lâzım mı dimek işte filânı severin"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "muzari-8-ahreb-mekfuf"
+source = "yayla"
+where = "1. gazel"
+lines = ["Nûr-ı Hudâdur âyîne-i cân-ı enbiyâ", "Ahkâm-ı şer'dür güher-i kân-ı enbiyâ"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "muzari-8-ahreb-mekfuf"
+source = "yayla"
+where = "2. gazel"
+lines = ["Maşrık-fürûz-ı feyzdür envâr-ı evliyâ", "Ser-mâye-i şuhûddur âsâr-ı evliyâ"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "remel-8-mahzuf"
+source = "yayla"
+where = "3. gazel"
+lines = ["Terk-i matlabdur bu matlabgâhda matlab bana", "Eyle lutfundan müretteb matlabum yâ Rab bana"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "muzari-8-ahreb-mekfuf"
+source = "yayla"
+where = "4. gazel"
+lines = ["Hat 'azl-i hüsn virmedi ey nâzenîn sana", "Oldu berât-ı tâze hat-ı anberîn sana"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "remel-8-mahbun"
+source = "yayla"
+where = "5. gazel"
+lines = ["Nedür ey şûh bu bîhûde gazab n'oldı sana", "Meşrebün düşmen-i nâz idi 'aceb n'oldı sana"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "hezec-8-salim"
+source = "yayla"
+where = "6. gazel"
+lines = ["Olaldan zevk-yâb-ı âb-ı sahrâ meşreb-i deryâ", "Dem-â-dem bûs ider dâmân-ı sahrâyı leb-i deryâ"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "hezec-8-salim"
+source = "yayla"
+where = "8. gazel"
+lines = ["Ruhında bâdeden yârun ki âb u tâb olur peydâ", "Derûnumda benüm bir ma'den-i sîm-âb olur peydâ"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "remel-8-mahbun"
+source = "yayla"
+where = "9. gazel"
+lines = ["Nice mümkin ki tahallüf ide te'sîr-i du'â", "Halka-i sıdkdan oldukça cehân tîr-i du'â"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "muctess-8-mahbun"
+source = "yayla"
+where = "12. gazel"
+lines = ["Muhâsebe kalemi itmedi o gûne vefâ", "Ki bî-elif ide cilve şebîh-i kalb-i edâ"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "hezec-8-ahreb-mekfuf"
+source = "yayla"
+where = "13. gazel"
+lines = ["Dâgum nemek-âlây-ı hasân eyleme yâ Rab", "Bâğum sipeh-ârây-ı hazân eyleme yâ Rab"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "remel-8-mahzuf"
+source = "yayla"
+where = "15. gazel"
+lines = ["Va'de-i hâtır-firîbün düzd-i hâb itdün bu şeb", "Târ u pûd-ı câme-hâbum sûz u tâb itdün bu şeb"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "muctess-8-mahbun"
+source = "yayla"
+where = "18. gazel"
+lines = ["Derûn-ı gamzede de neş'e-i şarâb garîb", "Harâbede görinür şem'-i bezm-tâb garîb"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "muctess-8-mahbun"
+source = "yayla"
+where = "20. gazel"
+lines = ["Şaraba şerm virür âb-ı cân-fezâ-yı Haleb", "Şemîm-i Cenneti mahcûb ider hevâ-yı Haleb"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "hezec-8-ahreb-mekfuf"
+source = "yayla"
+where = "26. gazel"
+lines = ["Kâsid görinür gerçi ki dükkân-ı kanâ'at", "Der-kârdur ammâ yine mîzân-ı kanâ'at"]
+
+[[beyit]]
+poet = "Nâbî"
+meter = "hezec-8-ahreb-mekfuf"
+source = "yayla"
+where = "30. gazel"
+lines = ["Ne dâde-i mahlûka ne sîm ü zere minnet", "Dîvân-ı ezelde yazılan deftere minnet"]
+
+[[beyit]]
+poet = "Şeyh Gâlib"
+meter = "muzari-8-ahreb-mekfuf"
+source = "hasretiz"
+where = "1. beyit"
+lines = ["Bir âşıkız ki rûy-ı dil-ârâya hasretiz", "Bir jâleyiz ki gonca-i ra'nâya hasretiz"]
+
+[[beyit]]
+poet = "Şeyh Gâlib"
+meter = "muzari-8-ahreb-mekfuf"
+source = "hasretiz"
+where = "2. beyit"
+lines = ["Tûr-ı niyâza vardığımız olmadı müfîd", "Hemçün Kelîm-i berk-ı tecellâya hasretiz"]
+
+[[beyit]]
+poet = "Şeyh Gâlib"
+meter = "muzari-8-ahreb-mekfuf"
+source = "hasretiz"
+where = "3. beyit"
+lines = ["Mihr-i cihân çeşmimize zerre-sân değil", "Pervâneyiz ki şem'-i şeb-ârâya hasretiz"]
+
+[[beyit]]
+poet = "Şeyh Gâlib"
+meter = "muzari-8-ahreb-mekfuf"
+source = "hasretiz"
+where = "4. beyit"
+lines = ["Çâk etmişiz ne fâ'ide cism-i nizârımız", "Bir şâneyiz ki zülf-i semen-sâya hasretiz"]
+
+[[beyit]]
+poet = "Şeyh Gâlib"
+meter = "muzari-8-ahreb-mekfuf"
+source = "hasretiz"
+where = "5. beyit"
+lines = ["Vardır dehân-ı dilbere şâyân bir sözüm", "Nâm-ı vefâyız âh-ı müsemmâya hasretiz"]

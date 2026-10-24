@@ -1,0 +1,54 @@
+[project]
+name = "aruz"
+version = "0.1.0"
+description = "Detect the aruz meter of Ottoman Divan poetry written in Latin transcription"
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+keywords = ["aruz", "prosody", "meter", "scansion", "ottoman turkish", "divan poetry"]
+classifiers = [
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Framework :: FastAPI",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Natural Language :: Turkish",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "rich>=13",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "turkish-deasciifier @ git+https://github.com/emres/turkish-deasciifier@d43b3714776ab040e5f78238998c79aae983ae25",
+]
+
+[project.scripts]
+aruz = "aruz.cli:main"
+aruz-web = "aruz.web.app:main"
+
+[project.urls]
+Homepage = "https://github.com/lilbatus/aruz-olcusu"
+Issues = "https://github.com/lilbatus/aruz-olcusu/issues"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aruz"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

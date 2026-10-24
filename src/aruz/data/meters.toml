@@ -1,0 +1,148 @@
+[feet]
+"Mefâîlün" = ".---"
+"Mefâîlü" = ".--."
+"Mefâilün" = ".-.-"
+"Feûlün" = ".--"
+"Feûl" = ".-"
+"Fâilâtün" = "-.--"
+"Fâilâtü" = "-.-."
+"Fe'ilâtün" = "..--"
+"Fe'ilâtü" = "..-."
+"Fâilün" = "-.-"
+"Fe'ilün" = "..-"
+"Fa'lün" = "--"
+"Mef'ûlü" = "--."
+"Müstef'ilün" = "--.-"
+"Müfte'ilün" = "-..-"
+
+[sources]
+wiki = "Aruz, Türkçe Vikipedi, https://tr.wikipedia.org/wiki/Aruz"
+cafer = "Ekrem Câfer, Fuzûlî Şiirinin Vezni, çev. Günay Kâzım Çatalkaya, Divan Edebiyatı Araştırmaları Dergisi 9 (2012), 167-194, https://dergipark.org.tr/tr/download/article-file/53698"
+turkedebiyati = "Aruz Ölçüsü (Aruz Vezni), https://www.turkedebiyati.org/aruz-vezni-olcusu/"
+
+[[meter]]
+id = "hezec-8-salim"
+name = "Hezec-i müsemmen-i sâlim"
+feet = ["Mefâîlün", "Mefâîlün", "Mefâîlün", "Mefâîlün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "hezec-6-mahzuf"
+name = "Hezec-i müseddes-i mahzûf"
+feet = ["Mefâîlün", "Mefâîlün", "Feûlün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "hezec-8-ahreb-mekfuf"
+name = "Hezec-i müsemmen-i ahreb-i mekfûf-ı mahzûf"
+feet = ["Mef'ûlü", "Mefâîlü", "Mefâîlü", "Feûlün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "hezec-8-ahreb"
+name = "Hezec-i müsemmen-i ahreb"
+feet = ["Mef'ûlü", "Mefâîlün", "Mef'ûlü", "Mefâîlün"]
+sources = ["cafer"]
+
+[[meter]]
+id = "hezec-6-ahreb-makbuz"
+name = "Hezec-i müseddes-i ahreb-i makbûz-ı mahzûf"
+feet = ["Mef'ûlü", "Mefâilün", "Feûlün"]
+sources = ["cafer", "turkedebiyati"]
+
+[[meter]]
+id = "remel-8-mahzuf"
+name = "Remel-i müsemmen-i mahzûf"
+feet = ["Fâilâtün", "Fâilâtün", "Fâilâtün", "Fâilün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "remel-6-mahzuf"
+name = "Remel-i müseddes-i mahzûf"
+feet = ["Fâilâtün", "Fâilâtün", "Fâilün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "remel-8-mahbun"
+name = "Remel-i müsemmen-i mahbûn-ı mahzûf"
+feet = ["Fe'ilâtün", "Fe'ilâtün", "Fe'ilâtün", "Fe'ilün"]
+first = ["Fâilâtün"]
+last = ["Fa'lün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "remel-6-mahbun"
+name = "Remel-i müseddes-i mahbûn-ı mahzûf"
+feet = ["Fe'ilâtün", "Fe'ilâtün", "Fe'ilün"]
+first = ["Fâilâtün"]
+last = ["Fa'lün"]
+sources = ["turkedebiyati"]
+
+[[meter]]
+id = "remel-8-meskul"
+name = "Remel-i müsemmen-i meşkûl"
+feet = ["Fe'ilâtü", "Fâilâtün", "Fe'ilâtü", "Fâilâtün"]
+sources = ["cafer"]
+
+[[meter]]
+id = "muzari-8-ahreb"
+name = "Muzâri-i müsemmen-i ahreb"
+feet = ["Mef'ûlü", "Fâilâtün", "Mef'ûlü", "Fâilâtün"]
+sources = ["cafer"]
+
+[[meter]]
+id = "muzari-8-ahreb-mekfuf"
+name = "Muzâri-i müsemmen-i ahreb-i mekfûf-ı mahzûf"
+feet = ["Mef'ûlü", "Fâilâtü", "Mefâîlü", "Fâilün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "muctess-8-mahbun"
+name = "Müctess-i müsemmen-i mahbûn-ı mahzûf"
+feet = ["Mefâilün", "Fe'ilâtün", "Mefâilün", "Fe'ilün"]
+last = ["Fa'lün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "hafif-6-mahbun"
+name = "Hafîf-i müseddes-i mahbûn-ı mahzûf"
+feet = ["Fâilâtün", "Mefâilün", "Fe'ilün"]
+first = ["Fe'ilâtün"]
+last = ["Fa'lün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "recez-8-salim"
+name = "Recez-i müsemmen-i sâlim"
+feet = ["Müstef'ilün", "Müstef'ilün", "Müstef'ilün", "Müstef'ilün"]
+sources = ["wiki"]
+
+[[meter]]
+id = "recez-4-salim"
+name = "Recez-i murabba-ı sâlim"
+feet = ["Müstef'ilün", "Müstef'ilün"]
+sources = ["cafer"]
+
+[[meter]]
+id = "mutekarib-8-salim"
+name = "Mütekârib-i müsemmen-i sâlim"
+feet = ["Feûlün", "Feûlün", "Feûlün", "Feûlün"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "mutekarib-8-maksur"
+name = "Mütekârib-i müsemmen-i maksûr"
+feet = ["Feûlün", "Feûlün", "Feûlün", "Feûl"]
+sources = ["wiki", "cafer"]
+
+[[meter]]
+id = "munserih-8"
+name = "Münserih-i müsemmen"
+feet = ["Müfte'ilün", "Fâilün", "Müfte'ilün", "Fâilün"]
+sources = ["wiki"]
+
+[[meter]]
+id = "seri-6"
+name = "Serî-i müseddes"
+feet = ["Müfte'ilün", "Müfte'ilün", "Fâilün"]
+sources = ["wiki"]
